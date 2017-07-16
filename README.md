@@ -12,7 +12,7 @@ Copy text/html to clipboard React component
 
 Forked from [react-copy-to-clipboard](https://npm.im/react-copy-to-clipboard)
 
-Which based on [copy-to-clipboard](https://npm.im/copy-to-clipboard)
+Based on [copy-html-to-clipboard](https://npm.im/copy-html-to-clipboard)
 
 > Would try to use execCommand with fallback to IE specific clipboardData interface and finally, fallback to simple prompt with proper text content & 'Copy to clipboard: Ctrl+C, Enter'
 
