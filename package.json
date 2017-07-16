@@ -1,7 +1,7 @@
 {
   "name": "react-copy-html-to-clipboard",
   "version": "6.0.0",
-  "description": "Copy html to clipboard React component",
+  "description": "Copy text/html to clipboard React component",
   "main": "lib/index.js",
   "config": {
     "component": "CopyToClipboard"
