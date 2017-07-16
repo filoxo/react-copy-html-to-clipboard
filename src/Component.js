@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import copy from 'copy-to-clipboard';
+import copy from 'copy-html-to-clipboard';
 
 
 export class CopyToClipboard extends React.PureComponent {
@@ -10,7 +10,10 @@ export class CopyToClipboard extends React.PureComponent {
     onCopy: PropTypes.func,
     options: PropTypes.shape({
       debug: PropTypes.bool,
-      message: PropTypes.string
+      message: PropTypes.string,
+      asHtml: PropTypes.bool,
+      onlyHtml: PropTypes.bool,
+      canUsePrompt: PropTypes.bool,
     })
   };
 

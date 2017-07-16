@@ -1,4 +1,4 @@
-# react-copy-to-clipboard [![npm](https://img.shields.io/npm/v/react-copy-to-clipboard.svg?style=flat-square)](https://www.npmjs.com/package/react-copy-to-clipboard)
+# react-copy-html-to-clipboard [![npm](https://img.shields.io/npm/v/react-copy-to-clipboard.svg?style=flat-square)](https://www.npmjs.com/package/react-copy-html-to-clipboard)
 
 [![Gitter](https://img.shields.io/gitter/room/nkbt/help.svg?style=flat-square)](https://gitter.im/nkbt/help)
 
@@ -23,7 +23,7 @@ Based on [copy-to-clipboard](https://npm.im/copy-to-clipboard)
 ### NPM
 
 ```sh
-npm install --save react react-copy-to-clipboard
+npm install --save react react-copy-html-to-clipboard
 ```
 
 Don't forget to manually install peer dependencies (`react`) if you use npm@3.
@@ -71,7 +71,7 @@ then include as
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CopyToClipboard from 'react-copy-to-clipboard';
+import CopyToClipboard from 'react-copy-html-to-clipboard';
 
 class App extends React.Component {
   state = {
@@ -111,12 +111,12 @@ ReactDOM.render(<App />, appRoot);
 
 #### `text`: PropTypes.string.isRequired
 
-Text to be copied to clipboard
+Text/html to be copied to clipboard
 
 
 #### `onCopy`: PropTypes.func
 
-Optional callback, will be called when text is copied
+Optional callback, will be called when text/html is copied
 
 ```
 onCopy(text, result)
@@ -124,11 +124,21 @@ onCopy(text, result)
 `result (bool)`: Returns `true` if copied successfully, else `false`.
 
 
-#### `options`: PropTypes.shape({debug: bool, message: string})
+#### `options`: PropTypes.shape({asHtml: bool, onlyHtml: bool, canUsePrompt: bool, debug: bool, message: string})
 
-Optional [copy-to-clipboard](https://npm.im/copy-to-clipboard) options.
+Optional [copy-html-to-clipboard](https://npm.im/copy-html-to-clipboard) options:
 
-See [API docs](https://npm.im/copy-to-clipboard#api) for details
+###### `asHtml`: PropTypes.bool
+True - use param `text` as html
+
+###### `onlyHtml`: PropTypes.bool
+True - if can't copy html to clipboard, don't try to copy text with alternative ways
+
+###### `canUsePrompt`: PropTypes.bool
+True - try alternative ugly prompt-way
+
+
+See [API docs](https://npm.im/copy-html-to-clipboard#api) for details
 
 #### `children`: PropTypes.node.isRequired
 
@@ -136,7 +146,13 @@ CopyToClipboard is a simple wrapping component, it does not render any tags, so 
 
 ```js
 <CopyToClipboard text="Hello!">
-  <button>Copy to clipboard</button>
+  <button>Copy text to clipboard</button>
+</CopyToClipboard>
+```
+
+```js
+<CopyToClipboard text="Hello, <b>I am bold</b>!" options={{asHtml: true}} >
+  <button>Copy html to clipboard</button>
 </CopyToClipboard>
 ```
 

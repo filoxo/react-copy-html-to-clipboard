@@ -1,7 +1,7 @@
 {
-  "name": "react-copy-to-clipboard",
-  "version": "5.0.0",
-  "description": "Copy-to-clipboard React component",
+  "name": "react-copy-html-to-clipboard",
+  "version": "6.0.0",
+  "description": "Copy html to clipboard React component",
   "main": "lib/index.js",
   "config": {
     "component": "CopyToClipboard"
@@ -16,26 +16,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nkbt/react-copy-to-clipboard.git"
+    "url": "https://github.com/ukrbublik/react-copy-html-to-clipboard.git"
   },
   "keywords": [
     "component",
     "react-component",
     "react",
+    "copy html to clipboard",
     "copy to clipboard",
     "clipboard"
   ],
   "author": "Nik Butenko <nik@butenko.me>",
+  "contributors": [
+    "Denis Oblogin <ukrbublik@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nkbt/react-copy-to-clipboard/issues"
+    "url": "https://github.com/ukrbublik/react-copy-html-to-clipboard/issues"
   },
-  "homepage": "https://github.com/nkbt/react-copy-to-clipboard",
+  "homepage": "https://github.com/ukrbublik/react-copy-html-to-clipboard",
   "peerDependencies": {
     "react": "^15.3.0"
   },
   "dependencies": {
-    "copy-to-clipboard": "^3",
+    "copy-html-to-clipboard": "^5",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
