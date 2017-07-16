@@ -39,9 +39,11 @@ export class CopyToClipboard extends React.PureComponent {
       onCopy(textToCopy, result);
     }
 
-    // Bypass onClick if it was present
+    // Bypass onClick/onTouchTap if it was present
     if (elem && elem.props && typeof elem.props.onClick === 'function') {
       elem.props.onClick(event);
+    } else if (elem && elem.props && typeof elem.props.onTouchTap === 'function') {
+      elem.props.onTouchTap(event);
     }
   };
 
@@ -55,6 +57,6 @@ export class CopyToClipboard extends React.PureComponent {
     } = this.props;
     const elem = React.Children.only(children);
 
-    return React.cloneElement(elem, {...props, onClick: this.onClick});
+    return React.cloneElement(elem, {...props, onClick: this.onClick, onTouchTap: this.onClick});
   }
 }
