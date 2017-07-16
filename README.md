@@ -92,7 +92,7 @@ class App extends React.Component {
           <span>Copy to clipboard with span</span>
         </CopyToClipboard>
 
-        <CopyToClipboard text={this.state.value}
+        <CopyToClipboard text={() => this.state.value}
           onCopy={() => this.setState({copied: true})}>
           <button>Copy to clipboard with button</button>
         </CopyToClipboard>
@@ -111,9 +111,9 @@ ReactDOM.render(<App />, appRoot);
 ## Options
 
 
-#### `text`: PropTypes.string.isRequired
+#### `text`: PropTypes.any.isRequired
 
-Text/html to be copied to clipboard
+Text/html to be copied to clipboard or function returning text/html
 
 
 #### `onCopy`: PropTypes.func

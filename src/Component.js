@@ -5,7 +5,7 @@ import copy from 'copy-html-to-clipboard';
 
 export class CopyToClipboard extends React.PureComponent {
   static propTypes = {
-    text: PropTypes.string.isRequired,
+    text: PropTypes.any.isRequired,
     children: PropTypes.element.isRequired,
     onCopy: PropTypes.func,
     options: PropTypes.shape({
@@ -27,10 +27,16 @@ export class CopyToClipboard extends React.PureComponent {
 
     const elem = React.Children.only(children);
 
-    const result = copy(text, options);
+    let textToCopy;
+    if (typeof text == 'function')
+        textToCopy = text();
+    else
+        textToCopy = text;
+
+    const result = copy(textToCopy, options);
 
     if (onCopy) {
-      onCopy(text, result);
+      onCopy(textToCopy, result);
     }
 
     // Bypass onClick if it was present
