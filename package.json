@@ -39,7 +39,7 @@
     "react": "^15.3.0"
   },
   "dependencies": {
-    "copy-html-to-clipboard": "^5",
+    "copy-html-to-clipboard": "^4",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
