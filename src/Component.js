@@ -17,6 +17,13 @@ export class CopyToClipboard extends React.PureComponent {
     })
   };
 
+
+  static defaultProps = {
+    onCopy: undefined,
+    options: undefined
+  };
+
+
   onClick = event => {
     const {
       text,
@@ -46,6 +53,7 @@ export class CopyToClipboard extends React.PureComponent {
       elem.props.onTouchTap(event);
     }
   };
+
 
   render() {
     const {
